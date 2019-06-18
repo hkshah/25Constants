@@ -1,12 +1,10 @@
 package com.app.controller;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.app.config.AppErrorResponse;
 import com.app.config.AppException;
@@ -15,15 +13,13 @@ import com.app.service.IAppService;
 import com.app.util.AppConstants;
 
 @RestController
-@RequestMapping("/25constants")
-@EnableWebMvc
+@RequestMapping(value = "/25constants")
 public class AppController {
-	private static final Logger LOGGER = Logger.getLogger(AppController.class);
 
 	@Autowired
-	IAppService iAppService;
+	private IAppService iAppService;
 
-	@PostMapping(value = "/{zipFilePath}/parseXMl/")
+	@PostMapping(value = "/{zipFilePath}/parseZipFile/")
 	public AppResponse calculatePremium(@PathVariable("zipFilePath") String zipFilePath) throws AppException {
 		try {
 			AppResponse appResponse = new AppResponse();

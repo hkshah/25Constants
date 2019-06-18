@@ -36,8 +36,7 @@
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<!-- <property name="configLocation" value="/resources/hibernate-cfg.xml"/> -->
-		<property name="packagesToScan"
-			value="com.rapidvalue.mhs.lift.services.mobileservice.bean" />
+		<property name="packagesToScan" value="com.app" />
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>

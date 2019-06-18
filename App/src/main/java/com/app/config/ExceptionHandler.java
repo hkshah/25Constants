@@ -1,12 +1,12 @@
 package com.app.config;
 
 import org.apache.log4j.Logger;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.app.model.AppResponse;
 import com.app.util.AppConstants;
-import com.app.util.DataUtil;
 
 @ControllerAdvice
 public class ExceptionHandler {
@@ -14,7 +14,7 @@ public class ExceptionHandler {
 
 	@org.springframework.web.bind.annotation.ExceptionHandler(AppException.class)
 	public @ResponseBody AppResponse handleCustomException(final AppException AppException) {
-		if (DataUtil.isDataContains(AppException.getError())) {
+		if (!StringUtils.isEmpty(AppException.getError())) {
 			LOGGER.error(AppException.getErrorMessage(), AppException.getError());
 		} else {
 			LOGGER.error(AppException.getErrorMessage(), AppException);

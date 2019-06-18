@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context antiJARLocking="true" path="/MHS_Lift_Services">
+<Context antiJARLocking="true" path="/xml_data">
 
 	<ResourceLink name="jdbc/xml_data" global="jdbc/xml_data"
 		type="javax.sql.DataSource" />
